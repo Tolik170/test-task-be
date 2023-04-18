@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "rimraf ./dist && npx tsc",
-    "prod": "npm run build && node dist/app",
-    "start": "nodemon",
+    "start": "npm run build && node dist/app",
+    "dev": "nodemon",
     "lint": "eslint ./src",
     "lintFix": "eslint ./src --fix"
   },
