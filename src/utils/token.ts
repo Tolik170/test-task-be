@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
+import { CookieOptions } from 'express'
 
 dotenv.config({ path: './.env' })
 
@@ -9,9 +10,11 @@ type Payload = {
 
 const oneDayInMs = 86400000
 
-export const cookieOptions = {
+export const cookieOptions: CookieOptions = {
   maxAge: oneDayInMs,
   httpOnly: true,
+  sameSite: 'none',
+  secure: true
 }
 
 export const generateToken = (payload: Payload) => {
