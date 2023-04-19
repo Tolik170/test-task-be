@@ -14,7 +14,8 @@ export const cookieOptions: CookieOptions = {
   maxAge: oneDayInMs,
   httpOnly: true,
   sameSite: 'none',
-  secure: true
+  secure: true,
+  domain: process.env.COOKIE_DOMAIN
 }
 
 export const generateToken = (payload: Payload) => {
